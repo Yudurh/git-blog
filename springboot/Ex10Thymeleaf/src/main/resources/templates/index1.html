@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>index1.html</title>
+</head>
+<body>
+    <h2>타임리프의 널 체크</h2>
+
+    <p th:utext="${ address }">address값</p>
+    <p th:utext="${ address_null }">address값</p>
+    <p th:utext="${ address_empty }">address값</p>
+
+    th:if <br />
+    <!-- th:block 타임리프 자체 로직을 위한 블록 태그 -->
+    <th:block th:if="${ address == null }">
+        <p>address 값은 null입니다.</p>
+    </th:block>
+    <th:block th:if="${ address_null == null }">
+        <p>address_null 값은 null입니다.</p>
+    </th:block>
+
+    <!-- th:unless 반대 if문 -->
+    th:unless <br />
+    <th:block th:unless="${ address == null }">
+        <p>address_null 값은 null이 아닙니다.</p>
+    </th:block>
+
+
+
+
+    삼항연산자 ? : 연산자 : null 이면 대체문구를 넣고, 아니면 원래값을 출력
+<p th:text="${ address_null } ?: ' null입니다 '">삼항 결과값</p>
+<p th:text="${ address } ?: ' null입니다 '">삼항 결과값</p>
+
+defaultString함수
+<p th:text="${ #strings.defaultString(address_null,'null입니다') }">defaultString함수 결과값</p>
+<p th:text="${ #strings.defaultString(address,'null입니다') }">defaultString함수 결과값</p>
+
+isEmpty함수 <br>
+    <p th:if="${ #strings.isEmpty(address_empty) }"
+    th:text="|헉! empty입니다|">isEmpty함수 결과값</p>
+    <p th:if="${ #strings.isEmpty(address) }"
+    th:text="|헉! empty입니다|">isEmpty함수 결과값</p><!--비어있을때만 찍힘-->
+
+
+
+
+</body>
+</html>

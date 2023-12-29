@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>transition(전환) 속성</title>
+    <!-- transition-delay : 지연시간 -->
+    <!--           -duration : 변환시간 -->
+    <!--           -property : 어떤 속성에 변환을 줄것인가 -->
+    <!--           -timing-funtion : 보간타입(시간 vs 변화량) -->
+    <!-- 보간 : 인터폴레이션(시간의 간격을 채우는것) -->
+    <!-- 보간타입 : linear, ease(기본값), ease-in, ease-out, easy-in-out -->
+    <!-- https://cruiseweb.tistory.com/entry/CSS-Transition -->
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        /* 변환효과: 모든 속성 2초동안 */
+        transition: all 2s;
+      }
+      .box:hover {
+        width: 200px;
+        height: 200px;
+      }
+      .box:active {
+        background-color: red;
+        opacity: 0.8;
+        border: 10px solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>CSS Bar</h2>
+    <div id="graph">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </body>
+</html>

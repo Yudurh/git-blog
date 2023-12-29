@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        let num1 = document.getElementById("number1");
+        let num2 = document.getElementById("number2");
+        let mathBox = document.getElementsByClassName("math_box");
+        let ansBox = document.getElementById("ans_box");
+        let myDel = document.getElementById("del");
+        mathBox[0].onclick = () => {
+          ansBox.innerHTML = Number(num1.value) + Number(num2.value);
+        };
+        mathBox[1].onclick = () => {
+          ansBox.innerHTML = Number(num1.value) - Number(num2.value);
+        };
+        mathBox[2].onclick = () => {
+          ansBox.innerHTML = Number(num1.value) * Number(num2.value);
+        };
+        mathBox[3].onclick = () => {
+          ansBox.innerHTML = Number(num1.value) / Number(num2.value);
+        };
+        myDel.onclick = () => {
+          ansBox.innerHTML = "";
+          num1.value = "";
+          num2.value = "";
+        };
+      };
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        border: 3px solid black;
+        margin: 0 auto;
+        padding: 5px;
+        width: 250px;
+        height: auto;
+        overflow: hidden;
+      }
+      #wrap {
+        border: 1px solid black;
+        margin: 0 auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 5px;
+      }
+      #header {
+        margin: 5px;
+        padding: 4px;
+      }
+      #main {
+        margin: 5px;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        width: auto;
+      }
+      #footer {
+        margin: 5px;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+      }
+      .number {
+        display: flex;
+      }
+      #ans {
+        display: flex;
+        width: 98%;
+      }
+      .number input {
+        text-align: center;
+        margin: 5px;
+        flex: 2;
+      }
+      #ans_box {
+        background-color: darkgray;
+        width: auto;
+        flex: 2;
+      }
+      .math_box {
+        border: 1px solid rgb(16, 164, 223);
+        background-color: rgb(16, 164, 223);
+        color: aliceblue;
+        padding: 5px;
+        margin: 5px;
+        width: 100%;
+      }
+      #del {
+        border: 1px solid red;
+        background-color: red;
+        color: aliceblue;
+        padding: 5px;
+        margin: 5px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="header">
+        <h5>JavaScript</h5>
+        <div id="nav">계산기 프로그램을 작성해보자</div>
+      </div>
+      <div id="main">
+        <div class="number">숫자1 <input type="text" id="number1" /></div>
+        <div class="number">숫자2 <input type="text" id="number2" /></div>
+        <div id="ans">
+          연산 결과
+          <div id="ans_box" style="border: 1px solid black"></div>
+        </div>
+      </div>
+      <div id="footer">
+        <div class="math_box">덧셈</div>
+        <div class="math_box">뺄셈</div>
+        <div class="math_box">곱셈</div>
+        <div class="math_box">나눗셈</div>
+        <div id="del">지우기</div>
+      </div>
+    </div>
+  </body>
+</html>

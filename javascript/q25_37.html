@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Document</title>
+    <script>
+      let a = prompt().split("");
+      let b = [];
+      for (let i = 0; i < a.length; i++) {
+        if (a[i] == "q") {
+          a[i] = "e";
+        }
+        b[0] += a[i];
+      }
+      let c = a.join("");
+      console.log(c);
+    </script>
+  </head>
+  <body></body>
+</html>

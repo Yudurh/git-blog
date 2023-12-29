@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>입력태그의 종류들-2</title>
+  </head>
+  <body>
+    <form action="http://www.myserver.com">
+      <!-- button 태그 : html4.0부터 적용 -->
+      <!-- type이 없으면 서버전송(submit)이 됨 -->
+      <button>버튼</button><br />
+      <button type="submit">버튼</button><br />
+      <!-- type button 이면 서버전송이 안됨. 클릭만 됨 -->
+      <button type="button" onclick="alert('클릭됨')">버튼2</button><br />
+      <!-- input 태그지만 전송이 되는 버튼이다. -->
+      <input type="submit" /><br />
+      <input type="reset" value="리셋" /><br />
+      <input type="text" value="" />
+
+      <!-- formaction 속성 : 서버의 주소를 다르게 설정 가능 -->
+      <button type="submit" formaction="http://www.myserver2.com">
+        다른 주소로 전송
+      </button>
+      <input
+        type="submit"
+        formaction="http://www.myserver3.com"
+        value="다른 주소로 전송2"
+      />
+      <!-- 이미지 버튼 -->
+      <!-- 기본이 submit기능이 있음 -->
+      <br /><input
+        type="image"
+        src="play-button.png"
+        width="100"
+        height="100"
+      />
+      <button type="submit">
+        <img src="play-button.png" width="100" height="100" />
+      </button>
+      <button type="button">
+        <img src="play-button.png" width="100" height="100" />
+      </button>
+    </form>
+  </body>
+</html>

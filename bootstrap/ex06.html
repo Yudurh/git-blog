@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+      integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        margin: 0px;
+        padding: 0;
+        width: 1500px;
+        height: 1500px;
+      }
+      /* .container{
+        flex-direction:column ;
+      } */
+      .WAH {
+        width: 550px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div
+        class="d-lg-flex flex-row-reverse justify-content-center align-items-center"
+      >
+        <div class="row d-flex m-5 text-center WAH">
+          <img
+            src="draw1.webp"
+            alt=""
+            class="h-100px w-100px"
+            style="object-fit: contain; width: 500px"
+          />
+        </div>
+
+        <form
+          class="row m-4 d-flex flex-column align-items-center order-lg-1 text-center WAH"
+        >
+          <h1 class="fw-bold d-flex justify-content-center my-5 WAH">
+            Sign up
+          </h1>
+          <div class="mb-3 d-flex">
+            <label for="exampleInputEmail1" class="form-label m-3"
+              ><i class="fa-solid fa-user fa-xl"></i
+            ></label>
+
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Your Name"
+            />
+          </div>
+          <div class="mb-3 d-flex">
+            <label for="exampleInputPassword1" class="form-label m-3"
+              ><i class="fa-solid fa-envelope fa-xl"></i
+            ></label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputPassword1"
+              placeholder="Your Email"
+            />
+          </div>
+
+          <div class="mb-3 d-flex">
+            <label for="exampleInputEmail1" class="form-label m-3"
+              ><i class="fa-solid fa-lock fa-xl"></i
+            ></label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Password"
+            />
+            <div id="emailHelp" class="form-text"></div>
+          </div>
+          <div class="mb-3 d-flex">
+            <label for="exampleInputPassword1" class="form-label m-3"
+              ><i class="fa-solid fa-key fa-xl"></i
+            ></label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+              placeholder="Repeat Your Password"
+            />
+          </div>
+
+          <div class="mb-3 form-check d-flex justify-content-center">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck1"
+            />
+            <label class="form-check-label mx-3" for="exampleCheck1"
+              >I agree all statements in Terms of service</label
+            >
+          </div>
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary my-10">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

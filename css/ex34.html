@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>box-sizing</title>
+    <!-- width, height의 단위를 정의 -->
+    <!-- context-box : 기본값, 콘텐츠의 너비/높이로 크기 지정-->
+    <!--             : 배치할 때 패딩과 테두리 두께가 바뀌면 다시 계산해야됨 -->
+    <!-- border-box : 콘텐츠+패딩+테두리두께로 크기 지정 -->
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        border: 10px solid black;
+        margin: 10px;
+        padding: 10px;
+      }
+      div:nth-child(1) {
+        box-sizing: content-box;
+        background-color: aqua;
+      }
+      div:nth-child(2) {
+        box-sizing: border-box;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    context-box : width/height = 콘텐츠크기
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae est enim
+      officiis debitis pariatur explicabo, optio magni veniam dignissimos porro
+      repellendus amet cum at quibusdam laborum, aliquid quod impedit itaque.
+    </div>
+    border-box : width/height = 콘텐츠 + 패딩 + 테두리굵기
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. At veniam
+      assumenda, amet facilis maxime, libero laboriosam et fuga provident esse
+      temporibus, ipsa asperiores dolorem inventore numquam illo. Id, at quae?
+    </div>
+  </body>
+</html>

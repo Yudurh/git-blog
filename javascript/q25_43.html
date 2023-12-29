@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Document</title>
+    <script>
+      let a = prompt("10진수를 입력해주세요.");
+      let b = [];
+      let result = "";
+
+      while (a) {
+        //2진법은 10진수를 2로 여러번 나눠서 자릿수에 1이나 0을 넣을 지 판별하면 된다.
+        b.push(a % 2);
+        a = parseInt(a / 2, 10);
+      }
+      b.reverse();
+
+      b.forEach((n) => {
+        result += n;
+      });
+
+      console.log(result);
+    </script>
+  </head>
+  <body></body>
+</html>

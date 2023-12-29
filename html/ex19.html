@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>입력태그 종류들-3</title>
+  </head>
+  <body>
+    <form action="http://www.naver.com">
+      <input type="text" name="id" id="id" />
+      <!-- hidden속성 : 화면에 표시되지 않지만, 서버에 꼭 필요한 값을 전송할때 사용 -->
+      <!--        예) 게시물의 DB 인덱스값을 전달하는 용도 -->
+
+      <input type="hidden" name="hiddenValue" value="게시물 아이디값" />
+
+      <input type="submit" value="전송" />
+
+      <!-- 선택목록 태그 : select 태그 -->
+      <!-- 단축키 : 컨트롤 알트 화살표 -->
+      <!-- 서버에서는 String drink = "2" -->
+      <select name="drink">
+        <option value="1">콜라</option>
+        <option value="2" selected>사이다</option>
+        <option value="3">오렌지주스</option>
+        <option value="4">아메리카노</option>
+      </select>
+
+      <!-- 수평선(구분선)태그 : hr태그 -->
+      <hr />
+
+      <!-- 색상 표현 : 빛의 3원색 -->
+      <!-- R : RED, G : GREEN, B : BLUE, A : ALPHA(투명도) -->
+
+      <!-- 4바이트로 1픽셀 색상을 지정 : RGBA -->
+      <!-- RED : 1바이트: 8bit: 0~255 0x00~0xFF-->
+      <!-- GREEN : 1바이트: 8bit: 0~255 -->
+      <!-- BLUE : 1바이트: 8bit: 0~255 -->
+      <!-- ALPHA : 1바이트: 8bit: 0~255 -->
+
+      <!-- 색상 선택 태그 - Color Picker -->
+      <input type="color" name="color" value="#FF0000" />
+      <!-- 날짜 선택  -->
+      <input type="date" name="date" value="2023-08-02" />
+      <!-- 날짜-시간 선택 -->
+      <input type="datetime-local" name="datetime" value="2023-08-02T12:27" />
+      <!-- 이메일주소 -->
+      <input type="email" name="email" value="abc@gmail.com" />
+      <input
+        type="email"
+        name="email"
+        value="abc@gmail.com,qwe@gmail.com"
+        multiple
+      />
+      <!-- 월(달) -->
+      <input type="month" name="month" value="2023-08" />
+      <!-- 숫자 -->
+      <input type="number" name="number" value="10" min="5" max="15" step="1" />
+      <!-- 범위 -->
+      <input type="range" name="range" value="1" min="1" max="5" step="1" />
+      <!-- 많은 양의 텍스트를 입력 받을 때 -->
+      <textarea name="memo" cols="30" rows="10"> 많은 양의 데이타 </textarea>
+    </form>
+  </body>
+</html>

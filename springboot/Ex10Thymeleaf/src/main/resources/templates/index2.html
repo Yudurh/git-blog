@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index2.html</title>
+</head>
+<body>
+  <h2>날짜 형식, 금액 형식 출력</h2>
+    <p th:text="${ #dates.format(standardDate, 'yyyy/MM/dd HH:mm:ss')}"></p>
+    <p th:text="${ #temporals.format(localDate, 'yyyy/MM/dd')}"></p>
+    <p th:text="${ #temporals.format(localDateTime, 'yyyy/MM/dd HH:mm:ss')}"></p>
+
+    <p th:text="${ #numbers.formatInteger(number1, 3, 'COMMA') }"></p>
+    <p th:text="|${ #numbers.formatInteger(number1, 3, 'COMMA') }원|"></p>
+    세자리수마다 콤마 소숫점 2자리까지 출력 <br>
+    <p th:text="${ #numbers.formatDecimal(number2, 3, 'COMMA', 2, 'POINT') }"></p>
+
+
+</body>
+</html>

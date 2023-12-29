@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index3</title>
+</head>
+<body>
+    <h2> 조건적인 출력 : if, switch </h2>
+    if <br>
+    <p th:if="${ role } == 'admin'" th:text = "|사용자는 관리자입니다|"></p>
+    <p th:unless="${ role } == 'admin'" th:text = "|사용자는 관리자입니다|"></p>
+
+    <th:block th:if="${ role } == 'admin'">
+        <a href="/admin">관리자 페이지 링크</a> <br>
+    </th:block>
+    <th:block th:unless="${ role } == 'admin'">
+     <p>사용자는 관리자가 아닙니다</p>
+    </th:block>
+
+    switch <br>
+    <th:block th:switch="${ role }">
+        <p th:case="admin">사용자는 관리자 입니다</p>
+        <p th:case="guest">사용자는 손님 입니다</p>
+        <p th:case="">사용자는 그 외 권한입니다 입니다</p>
+    </th:block> <br>
+
+</body>
+</html>

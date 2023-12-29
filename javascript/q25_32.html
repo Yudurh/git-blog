@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Document</title>
+    <script>
+      let a = prompt();
+      let b = a.split(" ");
+      let c = a.split(" ");
+      b.sort(function (a, b) {
+        return a - b;
+      });
+      for (let i = 0; i < b.length; i++) {
+        if (b[i] != c[i]) {
+          console.log("no");
+          break;
+        } else if (b[b.length - 1] == c[b.length - 1]) {
+          console.log("yes");
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

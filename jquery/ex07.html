@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>n번째 선택자, 체인함수</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      // n번째 선택 : css 1. nth-child 2. nth-type-of
+      //            : jquery
+      // 1.eq() 함수 : eq(0) 첫번째 선택
+      // 2.first() : 첫번째
+      // 3.last() : 마지막번째
+      // 4.add() : 객체선택 추가
+      $(function () {
+        $("h1").eq(0).css("color", "red");
+        $("h1").eq(1).css("color", "blue");
+        $("h1").first().css("background-color", "yellow");
+        $("h1").last().css("background-color", "cyan");
+        // add()함수로 선택 객체를 추가한다
+        $("h1").first().add("h2").add("p").css("color", "brown");
+      });
+    </script>
+  </head>
+  <body>
+    <h1>제목태그 1</h1>
+    <h1>제목태그 2</h1>
+    <h1>제목태그 3</h1>
+    <h1>제목태그 4</h1>
+    <h1>제목태그 5</h1>
+    <h2>제목태그 6</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
+      maiores illum voluptate! Sint perferendis voluptate maiores consectetur
+      cum nihil molestias possimus ipsum, corporis, non sit dicta error nostrum
+      dolorum ducimus?
+    </p>
+  </body>
+</html>

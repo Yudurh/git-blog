@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>타이머 관련함수</title>
+    <script>
+      // setTimeout 함수 : 일정시간후에 코드호출
+      // setInterval 함수 : 일정시간마다 코드 호출
+      /*let timer = setTimeout(() => {
+        console.log("3초후에 실행됨");
+      }, 3000);
+      // 타이머를 지움
+      clearTimeout(timer);*/
+
+      // 1초간격으로 실행
+      let interval = setInterval(() => {
+        console.log("1초마다 수행됨");
+        console.log(new Date().toTimeString().split(" ")[0]);
+        console.log(new Date().toISOString().split("T")[0]);
+
+        let time = new Date().toTimeString().split(" ")[0];
+        let date = new Date().toISOString().split("T")[0];
+        console.log(date + " " + time);
+      }, 1000);
+    </script>
+  </head>
+  <body></body>
+</html>

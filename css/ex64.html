@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>가상요소 선택자 활용1</title>
+    <style>
+      li {
+        /* 점점점 제거 */
+        list-style: none;
+        float: left;
+        padding: 0 10px;
+      }
+      li::after {
+        content: "|";
+        float: right;
+        color: grey;
+        margin-top: -2px;
+        margin-right: -10px;
+      }
+      li:last-child::after {
+        content: none;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>로그인</li>
+      <li>회원가입</li>
+      <li>마이페이지</li>
+      <li>사이트맵</li>
+    </ul>
+  </body>
+</html>

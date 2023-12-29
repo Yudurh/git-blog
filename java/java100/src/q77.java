@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class q77 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int a = sc.nextInt();
+        fact(a);
+        System.out.println(fact(a));
+
+
+
+
+
+    }
+
+    public static int fact(int n) {
+
+        if (n==1){
+            return 1;
+        }
+
+
+        return n*fact(n-1);
+    }
+
+
+
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Document</title>
+    <script>
+      let a = prompt().split(" ");
+      let one = 0;
+      let hye = 0;
+      let yu = 0;
+      for (let i = 0; i < a.length; i++) {
+        if (a[i] === "원범") {
+          one++;
+        } else if (a[i] === "혜원") {
+          hye++;
+        } else if (a[i] === "유진") {
+          yu++;
+        }
+      }
+      if (one > hye && one > yu) {
+        console.log("원범이가 총 " + one + "표로 반장이됨");
+      } else if (hye > one && hye > yu) {
+        console.log("혜원이가 총 " + hye + "표로 반장이됨");
+      } else if (yu > one && yu > hye) {
+        console.log("유진이가 총 " + yu + "표로 반장이됨");
+      } else {
+        console.log("무승부");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

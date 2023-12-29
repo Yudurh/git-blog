@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>flex shrink속성</title>
+    <!-- 유연하게 늘리기-->
+    <!-- 기본값 : 0 -->
+    <!--        : 정수값 1,2,3,.... n/sum비율 -->
+    <style>
+      .container {
+        width: 90%;
+        /* 콘텐츠 크기만큼 기본값 */
+        height: auto;
+        background-color: yellow;
+        border: 10px solid black;
+        padding: 10px;
+        display: flex;
+      }
+      .item {
+        width: auto;
+        height: 100%;
+        margin: 10px;
+        border: 10px solid black;
+        padding: 10px;
+        background-color: rgb(136, 219, 136);
+      }
+      /* flex shrink */
+      /* 유연하게 줄이기 */
+      /* 기본값 1 */
+      /* 0 : 고정크기를 확보한다 */
+      /*   : width를 고정크기로 설정한다 */
+      .item:nth-child(1) {
+        flex-shrink: 0;
+        flex-basis: 300px;
+        width: 400px;
+      }
+      .item:nth-child(2) {
+        flex-basis: 100%;
+        flex-shrink: 1;
+      }
+      .item:nth-child(3) {
+        flex-basis: 100%;
+        flex-shrink: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>flex-shrink</h1>
+    <div class="container">
+      <div class="item"><h3>AAA</h3></div>
+      <div class="item"><h3>BBBBBBBBBBBB</h3></div>
+      <div class="item"><h3>CCC</h3></div>
+    </div>
+  </body>
+</html>

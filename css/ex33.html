@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>img태그 - object-fit 속성</title>
+    <style>
+      img {
+        border: 2px solid red;
+        width: 100px;
+        height: 100px;
+      }
+      #img1 {
+        /* 원본 이미지 크기로 보인다. 이미지는 Center */
+        object-fit: none;
+      }
+      #img2 {
+        /* 이미지 가로/세로중에 긴 쪽에 맞춘다 */
+        object-fit: contain;
+      }
+      #img3 {
+        /* 이미지 가로/세로중에 짧은 쪽에 맞춘다 */
+        object-fit: cover;
+      }
+      #img4 {
+        /* 기본값 */
+        /* 가로세로 비율을 img태그 크기에 맞춘다 */
+        object-fit: fill;
+      }
+      #img5 {
+        /* none과 contain중에 더 적절한 방향으로 사이즈를 조절 */
+        object-fit: scale-down;
+      }
+    </style>
+  </head>
+  <body>
+    <div><img id="img1" src="image1.jpg" alt="카페이미지1" /></div>
+    <div><img id="img2" src="image1.jpg" alt="카페이미지2" /></div>
+    <div><img id="img3" src="image1.jpg" alt="카페이미지3" /></div>
+    <div><img id="img4" src="image1.jpg" alt="카페이미지4" /></div>
+    <div><img id="img5" src="image1.jpg" alt="카페이미지5" /></div>
+  </body>
+</html>

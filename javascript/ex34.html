@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>문서 객체 선택함수</title>
+    <style>
+      #header1 {
+        color: red;
+      }
+    </style>
+    <script>
+      // 문서 객체 모델(DOM)
+      // 문서 객체 선택하기
+      // 1. 아이디로 선택 : getElementById( id ) - 객체로 반환
+      // 2. 클래스로 선택 : getElementsByClassname( class ) - 배열
+      // 3. 태그로 선택   : getElementsByTagname( tag ) - 배열
+      // 4. css선택자로 선택 : querySelecter( css선택자 ) - 객체
+      //                     : querySelecterAll( css선택자 ) - 배열
+      //  "#header1"
+      window.onload = () => {
+        // id로 찾기
+        let h1 = document.getElementById("header1");
+        h1.innerHTML = "제목태그 1 찾음";
+        // class로 찾기
+        let arrayH2 = document.getElementsByClassName("header-h2");
+        for (let h2 of arrayH2) {
+          h2.innerHTML = "제목태그 3,4,5 찾음";
+        }
+        // tag로 찾기
+        let arrayP = document.getElementsByTagName("p");
+        for (let p of arrayP) {
+          p.innerHTML = "문단태그 3개 찾음";
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <h1 id="header1">제목태그 1</h1>
+    <h1 id="header2">제목태그 2</h1>
+    <h2 class="header-h2">제목태그3</h2>
+    <h2 class="header-h2">제목태그4</h2>
+    <h2 class="header-h2">제목태그5</h2>
+    <p>문단태그 p</p>
+    <p>문단태그 p</p>
+    <p>문단태그 p</p>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Document</title>
+    <script>
+      let a = Number(prompt());
+      let b = Number(prompt());
+      let c = [];
+
+      for (let i = 0; i < b; i++) {
+        c[i] = Number(prompt());
+        a = a - c[i];
+        if (a < 0) {
+          console.log(i);
+          break;
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

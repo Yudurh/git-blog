@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>입력양식 태그 : form태그</title>
+    <!-- 로그인/회원가입 화면에서 사용자의 입력을 -->
+    <!-- 받아, 서버로 전송하는 태그 -->
+
+    <!--웹브라우저가 서버에 데이타를 전송하는 방법  -->
+    <!-- 1. form태그 통신 : GET/POST 통신방식 -->
+    <!-- 2. 주소줄을 이용한 GET방식 -->
+    <!-- 3. Java Script를 이용한 통신방식 : ajax, fetch, axios -->
+
+    <!-- HTTP GET방식 -->
+    <!-- http://localhost:3000/login?id=admin&pw=1234 -->
+    <!-- http : 통신방식 -->
+    <!-- :// : 구분자 -->
+    <!-- localhost(127.0.0.1) : 내 PC가 서버로 동작중임 -->
+    <!-- 3000 : 포트 번호, 프로그램마다 사용하는 인터넷번호 -->
+    <!-- /login : 프로그램 안의 경로 -->
+    <!-- ? : 구분자 -->
+    <!-- id=admin&pw=1234 : id가 admin이고, pw가 1234 키-값이다. -->
+
+    <!-- 연습 -->
+    <!-- 1. GET방식의 주소문자열을 완성하시오 -->
+    <!-- 요구사항 -->
+    <!-- 1. HTTP GET방식 -->
+    <!-- 2. 서버주소는 www.mysite.com(172.182.381.273) -->
+    <!-- 3. 포트번호는 8080 -->
+    <!-- 4. 경로는 /mypage/qna -->
+    <!-- 5. 보내고자 하는 데이타는 phone = 01012341234, address=한양  -->
+    <!-- http://www.mysite.com:8080/mypage/qna?phone=01012341234&address=한양 -->
+
+    <!-- 도메인 네임 -->
+    <!-- ip주소(172.182.381.273)를 영문이나 한글명으로 바꿔주는것 -->
+    <!-- 도메인네임 서버 -->
+    <!-- 도메인 네임을 ip주소로 바꿔주는 서버 -->
+    <!-- 도메인네임을 구매하는 방법 : 가비아, 후이즈, 카페24, 아마존 Route53 -->
+
+    <!-- IP주소: 인터넷상의 유일한 PC주소 -->
+    <!-- IPv4 -->
+    <!-- 0~255.0~255.0~255.0~266 -->
+    <!-- 127.0.0.1 : 내 pc -->
+    <!-- 192.168.0.1~255 : 인트라넷 기본 주소, 무선공유기(IPTIME) -->
+
+    <!-- HTTP POST방식 -->
+    <!-- http://localhost:3000 -->
+    <!-- 실제 데이타는 http 통신 패킷(512바이트) -->
+
+    <!-- 크롬(엣지) 개발자 모드 : F12 단축키 -->
+  </head>
+  <body>
+    <!-- form태그 -->
+    <!-- action 속성 : 서버주소 -->
+    <!-- method 속성 : 전송방식 -->
+    <!-- type text : 문자열 -->
+    <!--      password : 문자열 -->
+    <!--      file : 파일전송 -->
+    <!--      submit : 전송실행 버튼 -->
+    <!-- name 속성 : 서버에서 전송받을 매개변수 이름 -->
+    <!--           : String getDate(String id, String pw, File file) -->
+    <form action="http://www.myserver.com" method="get"></form>
+    <input type="text" name="id" /><br />
+    <input type="password" name="pw" /><br />
+    <input type="file" name="file" /><br />
+    <input type="submit" />
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>onload함수 대신 ready함수</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      // EX6
+      window.onload = () => {
+        let h1Array = document.getElementsByTagName("h1");
+        h1Array[0].innerHTML += "<br>onload함수 호출됨";
+      };
+      // jQurey
+      $(document).ready(() => {
+        let h1Array = document.getElementsByTagName("h1");
+        h1Array[0].innerHTML += "<br>ready함수 호출됨";
+      });
+      //좀 더 간결하게
+      $(() => {
+        let h1Array = document.getElementsByTagName("h1");
+        h1Array[0].innerHTML += "<br>$함수 호출됨";
+      });
+    </script>
+  </head>
+  <body>
+    <h1>문서 로딩 완료됨</h1>
+  </body>
+</html>

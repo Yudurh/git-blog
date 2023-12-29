@@ -1,0 +1,10 @@
+#server.port = 포트번호
+server:
+  port: 8080
+  #타임리프
+  #캐시 off : html파일을 수정시마다 매번 내려준다
+spring :
+  thymeleaf :
+  cache : false
+  prefix : classpath:/templates/
+  suffix : .html

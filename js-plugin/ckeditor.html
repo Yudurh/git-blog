@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ckeditor4.html -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ckeditor4 실습</title>
+    <script src="//cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+  </head>
+  <body>
+    <h3>ckeditor4 실습</h3>
+    <textarea id="editor4" name="editor4"></textarea>
+    <script>
+      //CKEDITOR.replace("editor4");
+      CKEDITOR.replace("editor4", {
+        // 서버에 이미지(파일)을 업로드해주는 코드
+        // 8080 톰캣 WAS 기본포트 - 오라클 DB와 포트(8080) 충돌
+        filebrowserUploadUrl: "http://localhost:8080/ckUpload",
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>배경이미지 div태그에 입히기</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-image: url(cosmos2.jpg);
+        background-repeat: no-repeat;
+        /* contain : 이미지의 너비,높이 중에 큰 것에 맞춤 */
+        /*         : 공백(여백)이 생긴다 */
+        /* cover : 이미지의 너비,높이 중에 작은 것에 맞춤 */
+        /*       : 이미지가 잘림 */
+        /* 가장 좋은 것은 채우고자하는 영역과  */
+        /* 배경이미지의 가로세로비율-해상도를 맞춘다 */
+
+        background-size: cover;
+        /* 이미지 시작위치   x좌표 y좌표 */
+        background-position: 10px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div><p>코스모스</p></div>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>테이블 입력값 조작하기</title>
+    <script>
+      //연습문제
+      //값 지우기 버튼을 클릭하면, 왼쪽의 입력창의 값을 지우시오.
+      window.onload = () => {
+        makeTable();
+
+        var btnArray = document.getElementsByTagName("button");
+        var inputArray = document.getElementsByClassName("myDel");
+        for (var i = 0; i < btnArray.length; i++) {
+          //화살표 함수에는 this가 없으므로 function으로
+          //이벤트를 등록합니다.
+          let a = i;
+          btnArray[i].onclick = function () {
+            inputArray[a].value = "";
+
+            //콘솔에 몇번 버튼이 클릭되었는지 출력하고,
+            //왼쪽의 입력창의 값을 지우시오.
+          };
+        }
+      };
+      function makeTable() {
+        document.writeln("<table border='1'>");
+        for (let i = 1; i < 11; i++) {
+          document.writeln("<tr>");
+          document.writeln("<td>목록" + i + "</td>");
+          document.writeln(
+            "<td>" + "<input type='text' class='myDel'>" + "</td>"
+          );
+          document.writeln("<td>" + "<button>값지우기" + "</button>" + "</td>");
+          document.writeln("</tr>");
+        }
+
+        //document.writeln함수를 이용하여
+        //동적으로 테이블을 작성하시오.
+      }
+    </script>
+  </head>
+  <body>
+    <button></button>
+  </body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>연습 카카오 로그인</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 10px;
+        padding: 10px;
+      }
+      #header {
+        font-size: 20px;
+        margin-bottom: 20px;
+        margin-top: 30px;
+      }
+      #main {
+        border: 0.5px solid grey;
+        padding: 30px;
+        display: flex;
+        width: 0 auto;
+
+        justify-content: center;
+        align-items: center;
+      }
+      #emailbox {
+        width: 100%;
+        border-style: none none solid none;
+      }
+      #passwordbox {
+        width: 100%;
+        border-style: none none solid none;
+        margin-bottom: 15px;
+      }
+      #loginbox {
+        text-align: center;
+        margin-top: 10px;
+      }
+      #loginbox button {
+        width: 100%;
+        border: none;
+        background-color: rgb(254, 229, 0);
+      }
+      #or {
+        margin: 10px;
+        font-size: small;
+        text-align: center;
+      }
+      #or span {
+        font-size: 5px;
+      }
+      #qrloginbox {
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      #qrloginbox button {
+        width: 100%;
+        border: none;
+        background-color: rgba(202, 201, 201, 0.5);
+      }
+      #signin {
+        background: none;
+      }
+
+      #infosave {
+        text-align: left;
+      }
+      #infosave input[type="checkbox"]:checked {
+        background: url(ico_comm.png) no-repeat 0 0;
+        background-size: 150px 150px;
+        background-position: -13px 0px;
+      }
+
+      #ifcb {
+        appearance: none;
+        cursor: pointer;
+        border-radius: 50%;
+        background: url(ico_comm.png) no-repeat 0 0;
+        background-size: 150px 150px;
+        background-position: 0px 0px;
+
+        width: 10px;
+        height: 10px;
+      }
+      #i {
+        appearance: none;
+        cursor: pointer;
+        border-radius: 50%;
+        background: url(ico_comm.png) no-repeat 0 0;
+        background-size: 150px 150px;
+        background-position: -20px -20px;
+
+        width: 10px;
+        height: 10px;
+      }
+
+      #signin > a:first-child {
+        float: left;
+        margin: 5px;
+        font-size: 1px;
+      }
+      #signin > a:nth-child(2) {
+        float: right;
+        margin-top: 5px;
+        font-size: 1px;
+      }
+      #signin > a:nth-child(3) {
+        float: right;
+        margin: 5px;
+        font-size: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="header">
+        <span>kakao</span>
+      </div>
+      <div id="main">
+        <div id="section">
+          <div id="email">
+            <label for=""></label>
+            <input type="text" id="emailbox" placeholder="카카오메일,," />
+          </div>
+          <div id="password">
+            <label for=""></label>
+            <input type="password" id="passwordbox" placeholder="비밀번호" />
+          </div>
+          <div id="infosave">
+            <input type="checkbox" id="ifcb" />
+            <label for="ifcb" style="font-size: small">
+              간편로그인 정보 저장
+            </label>
+            <button type="button" id="i"></button>
+          </div>
+          <div id="loginbox">
+            <button type="submit">로그인</button>
+          </div>
+          <div id="or">
+            <span></span>
+            <span>또는</span>
+            <span></span>
+          </div>
+          <div id="qrloginbox">
+            <button type="submit">QR코드 로그인</button>
+          </div>
+          <div id="signin">
+            <a href="">회원가입</a>
+
+            <a href="">계정찾기</a>
+            <a href="">비밀번호 찾기</a>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <a href="">a</a>
+        <a href="">s</a>
+        <a href="">d</a>
+        <a href="">f</a>
+      </div>
+    </div>
+  </body>
+</html>

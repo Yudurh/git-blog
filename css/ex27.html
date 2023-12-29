@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>inline속성으로 바꾸기 - float</title>
+    <!-- float : inline 속성 + 좌우정렬 -->
+    <!--       : HTML v1부터 있던 속성(주로 배치용) -->
+    <!--       : 실제 배치는 flex속성, table태그를 주로 이용한다. -->
+    <!-- 어렵고 기능이 부족하다. -->
+    <style>
+      body * {
+        border: 1px solid red;
+      }
+      div {
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        border: 2px solid black;
+        /* float를 사용할 때 주의점 */
+        /* 1. overflow: hidden; 을 사용해야함 */
+        /*    오버플로우될때, 자동줄바꿈이 됨 */
+        /* 2. 부모width가 넘치지 않도록 해준다*/
+        /* 3. clear속성으로 float속성을 제거해준다 */
+        overflow: hidden;
+      }
+      /* nth child()의 n변수 0~n까지 */
+      div:nth-child(2n-1) {
+        background-color: aqua;
+      }
+      #box1 {
+        float: left;
+      }
+      #box2 {
+        float: left;
+      }
+      #box3 {
+        /* float left right 속성 다 지움 */
+        clear: both;
+      }
+      #box4 {
+        float: right;
+      }
+      #box5 {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box1">박스1</div>
+    <div id="box2">박스2</div>
+    <div id="box3">박스3</div>
+    <div id="box4">박스4</div>
+    <div id="box5">박스5</div>
+  </body>
+</html>

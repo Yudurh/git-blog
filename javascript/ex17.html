@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>연습문제</title>
+    <script>
+      //DM으로 제출
+      //1. for문 if문을 사용하여
+      // 1부터 20까지 1씩 증가하는 반복문에서 i가 2의 배수일때만
+      // 출력하시오.
+      //2. 1부터 100까지 합을 구하시고 출력하시오.
+      //3. 1부터 100까지 소수의 갯수를 출력하시오.
+      //   소수 : 약수가 1과 자신인 수
+      //   약수 : 나누어 떨어지는 수
+      //4. 랜덤수를 1~100사이의 정수 100개 발생시키고, 그 수를 출력한 다음
+      //   최소수와 최대수를 출력하시오.
+      //  Math.random() : 0.0 ~ 9.9999... 의 랜덤한 실수를 반환
+      //5. 이번주 행운의 로또 숫자 6개를 출력하시오.
+      //   1부터 45까지의 랜덤한 수 6개를 뽑되
+      //   반복허용하지 않음. 재추첨 로직을 넣으시오.
+      // 1번
+      for (let i = 1; i < 21; i++) {
+        if (i % 2 == 0) {
+          console.log(i);
+        }
+      }
+      // 2번
+      let a = 0;
+      for (let i = 1; i < 101; i++) {
+        a = a + i;
+      }
+      console.log(a);
+
+      // 3번
+      let c = 0;
+      for (let i = 1; i < 101; i++) {
+        let b = 0;
+        for (let j = 1; j < i + 1; j++) {
+          if (i % j == 0) {
+            b++;
+          }
+          if (b == 2) {
+            c++;
+          }
+        }
+      }
+      console.log(c);
+      // 4번
+      let arr = [];
+      for (let i = 0; i < 100; i++) {
+        let ra = Math.floor(Math.random() * 10);
+        arr[i] = ra;
+      }
+      let sortedArr = arr.sort();
+      console.log(sortedArr[0] + " " + sortedArr[99]);
+      // 5번
+      function rand(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      let rot = [0, 0, 0, 0, 0, 0];
+      for (let i = 0; i < 6; i++) {
+        for (let j = 0; j < 6; j++) {
+          let ra = rand(1, 45);
+          rot[j] = ra;
+        }
+        if (i > 0 && rot[i] == rot[j]) {
+          i--;
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

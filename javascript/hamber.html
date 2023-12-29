@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- 1.주문하려면 터치 -->
+    <!-- 2.매장에서 식사 -->
+    <!-- 3.메뉴창(+주문내역창) -->
+    <!-- 4.메뉴추가창 -->
+    <!-- 5.주문확인창 -->
+    <!-- 6.결재창 -->
+
+    <title>Document</title>
+    <script>
+      function next_page(num) {
+        let page_out = document.getElementsByClassName("page");
+        page_out[num].style.display = "none";
+        page_out[num + 1].style.display = "block";
+      }
+      function other_page(num) {
+        let a_menus = document.getElementsByClassName("a_menu");
+        let menu_pages = document.getElementsByClassName("menu_page");
+        for (let i = 0; i < a_menus.length; i++) {
+          menu_pages[i].style.display = "none";
+        }
+        menu_pages[num].style.display = "flex";
+      }
+      function menu_add(num) {
+        let menu = document.getElementsByClassName("menu_page");
+        let total = document.getElementById("total");
+        let img_b = document.getElementsByClassName("img_b");
+        let menu_img = document.getElementsByClassName("menu_img");
+        for (let i = 0; i < menu.length; i++) {
+          menu[i].addEventListener("click", function () {
+            let clicked_img = menu[0].querySelector("img").src;
+            let img = document.createElement("img");
+            img.src = clicked_img;
+            img.width = 50; // You can adjust the size
+            img.height = 50;
+            total.appendChild(img);
+          });
+        }
+      }
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 400px;
+      }
+      .page {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 700px;
+        background-color: darkslategrey;
+      }
+      #main-0 {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 700px;
+      }
+      #inner-0 {
+        position: absolute;
+        top: 30px;
+        text-align: left;
+        left: 10px;
+      }
+      #inner1 {
+        background-color: yellow;
+        color: yellow;
+        margin-bottom: 10px;
+        width: 80%;
+      }
+      .p_text {
+        text-align: center;
+      }
+      #footer {
+        background-color: darkslategrey;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #wrap-1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 700px;
+        background-color: darkslategrey;
+        color: aliceblue;
+      }
+      #header-1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 15%;
+        width: 100%;
+        margin: 20px;
+        padding: 20px;
+      }
+      #nav-1 {
+        margin: 20px;
+      }
+      #main-1 {
+        display: flex;
+        height: 35%;
+        width: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      #take-in {
+        background-color: aliceblue;
+        height: 80%;
+        width: 35%;
+        text-align: center;
+      }
+
+      #take-out {
+        background-color: aliceblue;
+        height: 80%;
+        width: 35%;
+        text-align: center;
+      }
+
+      .img_b {
+        background-color: aliceblue;
+        margin-top: 30px;
+      }
+      .img_t {
+        color: brown;
+      }
+
+      #wrap-2 {
+        width: 100%;
+        height: 100%;
+      }
+      #header-2 {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 5%;
+        background-color: aliceblue;
+      }
+      #main-2 {
+        display: flex;
+        height: 80%;
+        width: 100%;
+        background-color: aliceblue;
+      }
+      #aside-2 {
+        flex-grow: 1;
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+      }
+      .a_menu {
+        margin: 10px;
+        border: 1px solid red;
+      }
+      #section-2 {
+        width: 70%;
+        flex-grow: 3;
+        display: flex;
+        flex-direction: row;
+      }
+      .menu_page {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+      }
+      .menu_page > div {
+        margin: 10px;
+      }
+      .menu_page {
+        display: none;
+      }
+      #def {
+        display: flex;
+      }
+      #footer-2 {
+        background-color: aliceblue;
+      }
+      #f_main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid black;
+        height: 60px;
+        overflow: hidden;
+      }
+      #f_footer {
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+      }
+      #f_footer > div {
+        flex: 1;
+        text-align: center;
+        border: 1px solid black;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page" onclick="next_page(0)">
+      <div id="main-0">
+        <div id="inner-0">
+          <div id="inner1" style="background-color: yellow">노란선</div>
+          <div id="inner2">포테이토 치즈스틱</div>
+          <div id="inner3">potato cheeze</div>
+        </div>
+        <div style="background-color: yellow">
+          <img src="pota_ch.jpg" alt="" width="100%" height="" />
+        </div>
+        <div class="p_text" style="background-color: yellow">쿠폰뭐시기</div>
+        <div id="footer">
+          <div class="p_text">주문 터치</div>
+          <div class="p_text">회사로고</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div id="wrap-1">
+        <div id="header-1">
+          <img src="burger.png" alt="" />
+          <div id="nav-1">식사하실 장소를 선택해주세요</div>
+        </div>
+        <div id="main-1">
+          <div id="take-in" onclick="next_page(1)">
+            <img src="burger.png" alt="" class="img_b" />
+            <div class="img_t">매장에서 식사</div>
+          </div>
+          <div id="take-out" onclick="next_page(1)">
+            <img src="burger.png" alt="" class="img_b" />
+            <div class="img_t">테이크 아웃</div>
+          </div>
+        </div>
+        <div id="footer-1">뭐시기저시기</div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div id="wrap-2">
+        <div id="header-2">
+          <div>회사명</div>
+          <div>홈</div>
+        </div>
+        <div id="main-2">
+          <div id="aside-2">
+            <div class="a_menu" onclick="other_page(0)">버거</div>
+            <div class="a_menu" onclick="other_page(1)">음료</div>
+            <div class="a_menu" onclick="other_page(2)">세트</div>
+            <div class="a_menu" onclick="other_page(3)">사이드</div>
+          </div>
+          <div id="section-2">
+            <div class="menu_page" id="def">
+              <div class="menu_img" onclick="menu_add(0)">
+                <img src="burger.png" />버거1
+              </div>
+              <div>버거2</div>
+              <div>버거3</div>
+              <div>버거4</div>
+            </div>
+            <div class="menu_page">
+              <div>음료1</div>
+              <div>음료2</div>
+              <div>음료3</div>
+            </div>
+            <div class="menu_page">
+              <div>세트1</div>
+              <div>세트2</div>
+            </div>
+            <div class="menu_page">
+              <div>사이드1</div>
+            </div>
+          </div>
+        </div>
+        <div id="footer-2">
+          <div id="f_nav" style="background-color: darkslategrey">
+            주문 내역
+          </div>
+          <div id="f_main">
+            <div id="total"></div>
+            <div id="del_box">지우기</div>
+          </div>
+          <div id="f_footer">
+            <div>주문취소</div>
+            <div>다음</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

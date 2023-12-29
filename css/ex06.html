@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>태그선택자와 id,class 연결</title>
+    <style>
+      h1.select {
+        background-color: cyan;
+      }
+      li#item {
+        color: blue;
+      }
+      .item {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="select">제목태그1</h1>
+    <h1>제목태그1</h1>
+    <ul>
+      <li class="select">아이템1</li>
+      <li id="item">아이템2</li>
+      <li class="select">아이템3</li>
+      <!-- 클래스이름은 여러개 가질 수 있다. -->
+      <li class="select item">아이템4</li>
+    </ul>
+  </body>
+</html>

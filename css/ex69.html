@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>미디어쿼리 Media Query</title>
+    <!-- 화면너비에 따라 CSS를 따로 적용한다 -->
+    <!-- 반응형 웹이란? -->
+    <!--    : 화면너비에 따라서 반응하는 동적인 웹을 의미 -->
+    <!--    : 화면 높이는 세로 스크롤이 있어서 별도의 처리가 의미없음 -->
+    <!--    : 화면 너비에 따라서 PC웹, 태블릿웹, 모바일웹으로 구분됨 -->
+    <!-- 반응형 웹을 만드는 방법 -->
+    <!-- 1. PC웹과 모바일웹을 별도로 제작 예)네이버PC웹, 모바일웹 -->
+    <!-- 2. 반응형으로 화면 너비에 따라서 배치가 바뀌도록 제작-->
+    <!--    : PC웹 - 4열, 모바일 - 2열 -->
+
+    <!-- PC화면 너비 : 가로 960px이상  -->
+    <!-- 태블릿화면 너비 : 가로 768px이상, 아이패드의 수직상태 가로 너비 -->
+    <!-- 모바일화면 너비 : 가로 767px이하 -->
+    <style>
+      /* 모바일 */
+      /* 0px ~ 767px  */
+      @media screen and (max-width: 767px) {
+        body {
+          background-color: cyan;
+          color: white;
+          font-weight: bold;
+        }
+      }
+      /* 태블릿 */
+      /* 768px ~ 959px */
+      @media screen and (min-width: 768px) and (max-width: 959px) {
+        body {
+          background-color: green;
+          color: white;
+          font-weight: bold;
+        }
+      }
+      /* PC */
+      /* 960px ~  */
+      @media screen and (min-width: 960px) {
+        body {
+          background-color: plum;
+          color: white;
+          font-weight: bold;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>제목 태그</h1>
+    <p>문단태그입니다.문단태그입니다.문단태그입니다.문단태그입니다.</p>
+    <p>문단태그입니다.문단태그입니다.문단태그입니다.문단태그입니다.</p>
+  </body>
+</html>

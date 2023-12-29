@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>배열 Array</title>
+    <script>
+      // 배열 : 같은 타입의 데이타를 순차적으로 나열해놓은 데이타 구조
+      //      : 인덱스가 있다. 0부터 시작 1 2 3 ...
+      //      : JS는 배열과 리스트가 통합되어 있다.
+      // 선언형식
+      // let 배열이름 = [요소1,요소2,요소3];
+      // let 배열이름 = []; 빈배열
+      let nums = [10, 20, 30];
+      console.log(nums[0]); //인덱스로 값에 접근 가능
+      console.log(nums[1]);
+      console.log(nums[2]);
+
+      console.log(nums[3]); //인덱스잘못지정 => undefined(선언x,초기화x)
+
+      nums[2] = 40;
+      console.log(nums[2]);
+      nums[3] = 50; //
+      console.log(nums[3]);
+
+      /*for (let i = 0; i <script nums.length; i++) {
+        console.log(nums[i]);
+      }*/
+
+      // 향상된 for문
+      // 1. for in문 : 인덱스를 넘겨준다
+      /* for (let number in nums) {
+        console.log(nums[index]);
+      }*/
+      // 2. for of문
+      for (let number of nums) {
+        console.log(number);
+      }
+      // 3. forEach()함수 : 매개변수로 함수형변수(익명함수)를 넣어줌
+      nums.forEach(function (value) {
+        console.log(value);
+      });
+      nums.forEach((value) => {
+        console.log(value);
+      });
+      var names = ["장미", "수선화", "진달래"];
+      for (let name in names) {
+        console.log(name[names.index]);
+      }
+      for (let name of names) {
+        console.log(name);
+      }
+      for (let name of names) {
+        if (name.length == 2) {
+          console.log(name);
+        }
+      }
+
+      names.forEach(function (value) {
+        console.log(value);
+      });
+      names.forEach((value) => {
+        console.log(value);
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

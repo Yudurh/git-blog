@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Key-Value객체</title>
+    <script>
+      // JS 객체( KV객체 )
+      // 자바 - 맵(Key-Value)
+
+      // 객체선언
+      // key: 반드시 문자열(쌍따옴표x)
+      // value : 다양한 타입(number,string,function,object)
+      let keyValue = {
+        apple: 1000,
+        banana: 2000,
+        pear: 3000,
+      };
+      console.log(keyValue["apple"]);
+      console.log(keyValue.apple);
+
+      let person = {
+        name: "홍길동",
+        action: () => {
+          console.log("액션배우");
+        },
+      };
+
+      console.log(person.name);
+      person.action();
+
+      let toy = {
+        name: "마블 피규어",
+        price: 1000,
+        lang: "한국어",
+        color: "white & red",
+      };
+      // 전체순환
+      // for in문
+      for (let key in toy) {
+        console.log(toy[key]);
+      }
+      // for of문
+      for (const [key, value] of Object.entries(toy)) {
+        console.log(key);
+        console.log(value);
+      }
+      //연습문제
+      // student KV객체를 선언하고,
+      // 이 학생의 국어, 영어, 수학 성적을 각각 70, 80,90으로 설정하고,
+      // 합산과 평균을 내는 익명함수를 각각 sum, avr로 설정하고,
+      // 익명함수를 통해, sum과 avr값을 출력하시오.
+      // 그리고 국어,영어,수학 점수도 각각 출력하시오.
+      let student = {
+        국어: 70,
+        영어: 80,
+        수학: 90,
+        sum: (a, b, c) => {
+          return a + b + c;
+        },
+        avr: () => {
+          return (a + b + c) / 3;
+        },
+      };
+      /*for (let a in student) {
+        console.log(student[a]);
+      }
+      student.sum();
+      student.avr();*/
+      for (const [key, value] of Object.entries(student)) {
+        console.log(key);
+        console.log(value);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

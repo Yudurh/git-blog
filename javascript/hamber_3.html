@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        let a_menus = document.getElementsByClassName("a_menu");
+        let menu_pages = document.getElementsByClassName("menu_page");
+        let b_imgs = document.getElementsByClassName("b_img");
+        let d_imgs = document.getElementsByClassName("d_img");
+        let count = document.getElementsByTagName("label");
+        let del_box = document.getElementById("del_box");
+        let menu_imges = document.getElementsByClassName("menu_img");
+        let next = document.getElementById("next");
+        let g_f = document.getElementById("g_f");
+        let g_h = document.getElementById("g_h");
+        g_f.onclick = () => {
+          location.href = "http://127.0.0.1:5500/hamber_2.html";
+        };
+        g_h.onclick = () => {
+          location.href = "http://127.0.0.1:5500/hamber_1.html";
+        };
+
+        /* menu_pages[0].onclick = () => {
+          b_imgs[0].style.display = "block";
+          count[0].innerHTML = Number(count[0].innerHTML) + 1;
+        };*/ let to_info = [];
+        for (let i = 0; i < menu_imges.length; i++) {
+          menu_imges[i].onclick = () => {
+            b_imgs[i].style.display = "block";
+            count[i].innerHTML = Number(count[i].innerHTML) + 1;
+          };
+        }
+
+        del_box.onclick = () => {
+          for (let i = 0; i < count.length; i++) {
+            count[i].innerHTML = "";
+            b_imgs[i].style.display = "none";
+          }
+        };
+
+        next.onclick = () => {
+          for (let i = 0; i < count.length; i++) {
+            to_info[i] = Number(count[i].innerHTML);
+          }
+          let toin_string = JSON.stringify(to_info);
+          window.localStorage.setItem("total", toin_string);
+          location.href = "http://127.0.0.1:5500/hamber_4.html";
+        };
+
+        // let toin_string = JSON.stringify(to_info);
+        // window.localStorage.setItem("total", toin_string);
+      };
+      function other_page(num) {
+        let a_menus = document.getElementsByClassName("a_menu");
+        let menu_pages = document.getElementsByClassName("menu_page");
+        for (let i = 0; i < a_menus.length; i++) {
+          menu_pages[i].style.display = "none";
+        }
+        menu_pages[num].style.display = "flex";
+      }
+    </script>
+    <style>
+      #wrap-2 {
+        width: 400px;
+        height: 700px;
+      }
+      #header-2 {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 5%;
+        background-color: aliceblue;
+      }
+      #main-2 {
+        display: flex;
+        height: 80%;
+        width: 100%;
+        background-color: aliceblue;
+      }
+      #aside-2 {
+        flex-grow: 1;
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+      }
+      .a_menu {
+        margin: 10px;
+        border: 1px solid black;
+        color: aliceblue;
+        background-color: rgb(225, 67, 67);
+      }
+      #section-2 {
+        width: 70%;
+        flex-grow: 3;
+        display: flex;
+        flex-direction: row;
+      }
+      .menu_page {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+      }
+      .menu_page > div {
+        margin: 10px;
+      }
+      .menu_page {
+        display: none;
+      }
+      .menu_img {
+        height: 20px;
+        width: 30%;
+        text-align: center;
+      }
+      .menu_img > img {
+        height: 60px;
+        width: 60px;
+        flex-grow: 3;
+      }
+      #def {
+        display: flex;
+      }
+      #footer-2 {
+        background-color: aliceblue;
+      }
+      #f_main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid black;
+        height: 60px;
+        overflow: hidden;
+      }
+      #f_nav {
+        color: aliceblue;
+        padding: 5px;
+      }
+      #f_footer {
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+      }
+      #f_footer > div {
+        flex: 1;
+        text-align: center;
+        border: 1px solid black;
+        margin: 20px;
+      }
+      #total {
+        display: flex;
+      }
+      #del_box {
+        position: absolute;
+        left: 335px;
+        border: 1px solid black;
+        background-color: rgb(241, 65, 65);
+        color: aliceblue;
+        padding: 5px;
+      }
+      #g_f {
+        color: aliceblue;
+        background-color: black;
+      }
+      #next {
+        color: aliceblue;
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap-2">
+      <div id="header-2">
+        <div>회사명</div>
+        <div id="g_h">홈</div>
+      </div>
+      <div id="main-2">
+        <div id="aside-2" style="text-align: center">
+          <div class="a_menu" onclick="other_page(0)">버거</div>
+          <div class="a_menu" onclick="other_page(1)">음료</div>
+          <div class="a_menu" onclick="other_page(2)">사이드</div>
+          <div class="a_menu" onclick="other_page(3)">세트</div>
+        </div>
+        <div id="section-2">
+          <div class="menu_page" id="def">
+            <div class="menu_img">
+              <img src="burger.png" />
+              <div>버거1</div>
+            </div>
+            <div class="menu_img">
+              <img src="burger (2).png" />
+              <div>버거2</div>
+            </div>
+            <div class="menu_img">
+              <img src="fried-chicken (2).png" />
+              <div>치킨</div>
+            </div>
+            <div class="menu_img">
+              <img src="sausage (1).png" />
+              <div>핫도그</div>
+            </div>
+          </div>
+          <div class="menu_page">
+            <div class="menu_img">
+              <img src="sauce.png" />
+              <div>콜라</div>
+            </div>
+            <div class="menu_img">
+              <img src="ice-tea.png" />
+              <div>아이스티</div>
+            </div>
+            <div class="menu_img">
+              <img src="coffee-cup.png" />
+              <div>커피</div>
+            </div>
+          </div>
+          <div class="menu_page">
+            <div class="menu_img">
+              <img src="waffle.png" />
+              <div>와플</div>
+            </div>
+            <div class="menu_img">
+              <img src="pie.png" />
+              <div>파이</div>
+            </div>
+          </div>
+          <div class="menu_page">
+            <div class="menu_img">
+              <img src="burger.png" />
+              <div>세트1</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer-2">
+        <div id="f_nav" style="background-color: darkslategrey">주문 내역</div>
+        <div id="f_main">
+          <div id="total">
+            <div class="b_img" style="display: none">
+              <img src="burger.png" alt="" /><label for="">0</label>
+            </div>
+            <div class="b_img" style="display: none">
+              <img src="burger (2).png" alt="" /><label for="">0</label>
+            </div>
+            <div class="b_img" style="display: none">
+              <img src="fried-chicken (2).png" alt="" /><label for="">0</label>
+            </div>
+            <div class="b_img" style="display: none">
+              <img src="sausage (1).png" alt="" /><label for="">0</label>
+            </div>
+            <div class="b_img" style="display: none">
+              <img src="sauce.png" alt="" /><label for="">0</label>
+            </div>
+            <div class="b_img" style="display: none">
+              <img src="ice-tea.png" alt="" /><label for="">0</label>
+            </div>
+            <div class="b_img" style="display: none">
+              <img src="coffee-cup.png" alt="" /><label for="">0</label>
+            </div>
+            <div class="b_img" style="display: none">
+              <img src="waffle.png" alt="" /><label for="">0</label>
+            </div>
+            <div class="b_img" style="display: none">
+              <img src="pie.png" alt="" /><label for="">0</label>
+            </div>
+            <div class="b_img" style="display: none">
+              <img src="burger.png" alt="" /><label for="">0</label>
+            </div>
+          </div>
+          <div id="del_box">지우기</div>
+        </div>
+        <div id="f_footer">
+          <div id="g_f">주문취소</div>
+          <div id="next">다음</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- ex52 -->
+  <title>연습문제20 - 자판기 프로그램</title>
+
+  <style>
+    #wrap {
+      border: 1px solid gray;
+      width: 300px;
+      height: 400px;
+      margin: 30px auto;
+      display: flex;
+      flex-flow: wrap column;
+      align-items: center;
+      text-align: center;
+    }
+    .btn {
+      width: 250px;
+      height: 30px;
+      margin-bottom: 10px;
+    }
+    #can {
+      background-color: green;
+      color: rgb(240, 228, 228);
+    }
+    #water {
+      background-color: rgb(9, 216, 19);
+      color: rgb(240, 228, 228);
+    }
+    #result {
+      background-color: rgb(108, 158, 235);
+      color: rgb(240, 228, 228);
+    }
+    .won {
+      width: 120px;
+      height: 30px;
+      margin-bottom: 10px;
+      background-color: rgb(214, 48, 70);
+      color: rgb(240, 228, 228);
+    }
+    button {
+      border: 1px solid rgba(65, 65, 65, 0.5);
+    }
+    #remain {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+<div id="wrap">
+  <div>
+    <p>JavaScript</p>
+    <p>자판기 프로그램을 작성해보자</p>
+  </div>
+  <div>
+    <p>1. 동전 투입 시 잔액 추가됨.</p>
+    <p>2. 잔액 부족 시 잔액 부족 팝업</p>
+    <p>3. 뽑기 후에 잔액 차감.</p>
+  </div>
+
+    <form method="post">
+      <div id="insert">
+        <button type="submit" formaction="/VM1" name="c1" class="won" id="coin1000" value="1000">1000원 투입</button>
+        <button type="submit" formaction="/VM2" name="c2" class="won" id="coin500">500원 투입</button>
+      </div>
+  <button type="submit" formaction="/VM3" name="o1" class="btn" id="can">캔음료 2000원 뽑기</button>
+  <button type="submit" formaction="/VM" name="o2" class="btn" id="water">생수 700원 뽑기</button>
+  <label id="remain">잔액</label>
+  <button name="total" class="btn" id="result" th:text="${ total }">0</button>
+    </form>
+</div>
+</body>
+</html>

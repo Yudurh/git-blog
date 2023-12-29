@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>HTML 로딩완료 이벤트 함수 - onload 함수</title>
+    <script>
+      // onload함수 : 웹브라우저가 html문서를 파일로 저장하고, 메모리에 적재한다
+      //            : DOM(Document Object Model) 형식으로 데이타 트리를 완성한다
+      //            : HTML로딩 완료후 호출해주는 함수
+      console.log("HTML문서 읽기 전");
+
+      window.onload = () => {
+        console.log("HTML문서 로딩 완료됨");
+        document.body.innerHTML += "<h1>문서로딩됨!</h1>";
+      };
+    </script>
+  </head>
+  <body>
+    <h1>제목태그</h1>
+    <script>
+      // onload함수 안에서 호출안해도 됨
+    </script>
+  </body>
+</html>

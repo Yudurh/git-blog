@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Document</title>
+    <script>
+      let a = 0;
+      function n_fin() {
+        let wrap1 = document.getElementById("wrap");
+        let wrap2 = document.getElementById("wrap2");
+        if (a == 0) {
+          wrap2.style.display = "flex";
+          wrap1.style.display = "none";
+          a = a + 1;
+        } else {
+          location.href = "http://127.0.0.1:5500/hamber_5.html";
+        }
+      }
+      window.onload = () => {
+        let toin_string = window.localStorage.getItem("total");
+        let total = JSON.parse(toin_string);
+        let sum_in = document.getElementById("sum");
+        let b_imgs = document.getElementsByClassName("b_img");
+        let prices = document.getElementsByClassName("price");
+        let count = document.getElementsByClassName("lab");
+        let pluses = document.getElementsByClassName("plus");
+        let minuses = document.getElementsByClassName("minus");
+        let chb = document.getElementsByTagName("input");
+        let a = 0;
+        let n_fins = document.getElementById("n_fin");
+        let wrap1 = document.getElementById("wrap");
+        let wrap2 = document.getElementById("wrap2");
+        let g_f = document.getElementById("g_f");
+        g_f.onclick = () => {
+          location.href = "http://127.0.0.1:5500/hamber_3.html";
+        };
+        for (let i = 0; i < total.length; i++) {
+          count[i].innerHTML = Number(total[i]);
+          if (Number(total[i]) > 0) {
+            b_imgs[i].style.display = "flex";
+            sum_in.innerHTML =
+              Number(sum_in.innerHTML) +
+              Number(prices[i].innerHTML) * Number(total[i]);
+            prices[i].innerHTML = prices[i].innerHTML;
+          }
+        }
+      };
+
+      function chb_add() {
+        let wrap1 = document.getElementById("wrap");
+        let wrap2 = document.getElementById("wrap2");
+        let b_imgs = document.getElementsByClassName("b_img");
+
+        let chb = document.getElementsByTagName("input");
+        for (let i = 0; i < chb.length; i++) {
+          if (chb[i].checked == true) {
+            plus_s(i + 4);
+            b_imgs[i + 4].style.display = "flex";
+          }
+        }
+
+        wrap2.style.display = "none";
+        wrap1.style.display = "flex";
+      }
+      function plus_s(index) {
+        let sum_in = document.getElementById("sum");
+        let b_imgs = document.getElementsByClassName("b_img");
+        let prices = document.getElementsByClassName("price");
+        let count = document.getElementsByClassName("lab");
+        let pluses = document.getElementsByClassName("plus");
+        let minuses = document.getElementsByClassName("minus");
+
+        count[index].innerHTML = Number(count[index].innerHTML) + 1;
+
+        sum_in.innerHTML =
+          Number(sum_in.innerHTML) + Number(prices[index].innerHTML);
+      }
+
+      function minus_s(index) {
+        let sum_in = document.getElementById("sum");
+        let b_imgs = document.getElementsByClassName("b_img");
+        let prices = document.getElementsByClassName("price");
+        let count = document.getElementsByClassName("lab");
+        let pluses = document.getElementsByClassName("plus");
+        let minuses = document.getElementsByClassName("minus");
+
+        count[index].innerHTML = Number(count[index].innerHTML) - 1;
+
+        sum_in.innerHTML =
+          Number(sum_in.innerHTML) - Number(prices[index].innerHTML);
+      }
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #wrap {
+        width: 400px;
+        height: 700px;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        text-align: center;
+      }
+      #header {
+        flex-grow: 10%;
+        height: 70px;
+        margin: 10px;
+      }
+      #nav {
+        height: 70px;
+        flex-grow: 10%;
+      }
+      #main {
+        height: 560px;
+        flex-grow: 80%;
+        margin: 20px;
+      }
+      .pm_box {
+        display: flex;
+        margin: 10px;
+      }
+      #footer {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px;
+      }
+      #t_m {
+        display: flex;
+        margin: 20px;
+      }
+      #wrap2 {
+        width: 400px;
+        height: 700px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .lab {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="header">회사 이름</div>
+      <div id="nav">주문을 확인하세요</div>
+      <div id="main">
+        <div id="t_m">
+          <span>총 금액 : </span>
+          <div id="sum"></div>
+          <span>원</span>
+        </div>
+
+        <div id="menu">
+          <div class="b_img" style="display: none">
+            <img src="burger.png" alt="" />
+            <div class="b_imga">
+              <span class="b_name">버거</span>
+              <span class="price">5500</span><span>원</span>
+              <div class="pm_box">
+                <div class="plus" onclick="plus_s(0)" style="margin: 10px">
+                  +
+                </div>
+                <div class="lab">0</div>
+                <div class="minus" onclick="minus_s(0)" style="margin: 10px">
+                  -
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="b_img" style="display: none">
+            <img src="burger (2).png" alt="" />
+            <div>
+              <span class="b_name">버거2</span>
+              <span class="price">4500</span><span>원</span>
+              <div class="pm_box">
+                <div class="plus" onclick="plus_s(1)" style="margin: 10px">
+                  +
+                </div>
+                <div class="lab">0</div>
+                <div class="minus" onclick="minus_s(1)" style="margin: 10px">
+                  -
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="b_img" style="display: none">
+            <img src="fried-chicken (2).png" alt="" />
+            <div>
+              <span class="b_name">치킨</span>
+              <span class="price">6000</span><span>원</span>
+              <div class="pm_box">
+                <div class="plus" onclick="plus_s(2)" style="margin: 10px">
+                  +
+                </div>
+                <div class="lab">0</div>
+                <div class="minus" onclick="minus_s(2)" style="margin: 10px">
+                  -
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="b_img" style="display: none">
+            <img src="sausage (1).png" alt="" />
+            <div>
+              <span class="b_name">핫도그</span>
+              <span class="price">6500</span><span>원</span>
+              <div class="pm_box">
+                <div class="plus" onclick="plus_s(3)" style="margin: 10px">
+                  +
+                </div>
+                <div class="lab">0</div>
+                <div class="minus" onclick="minus_s(3)" style="margin: 10px">
+                  -
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="b_img" style="display: none">
+            <img src="sauce.png" alt="" />
+            <div>
+              <span class="b_name">콜라</span>
+              <span class="price">6000</span><span>원</span>
+              <div class="pm_box">
+                <div class="plus" onclick="plus_s(4)" style="margin: 10px">
+                  +
+                </div>
+                <div class="lab">0</div>
+                <div class="minus" onclick="minus_s(4)" style="margin: 10px">
+                  -
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="b_img" style="display: none">
+            <img src="ice-tea.png" alt="" />
+            <div>
+              <span class="b_name">아이스티</span>
+              <span class="price">6000</span><span>원</span>
+              <div class="pm_box">
+                <div class="plus" onclick="plus_s(5)" style="margin: 10px">
+                  +
+                </div>
+                <div class="lab">0</div>
+                <div class="minus" onclick="minus_s(5)" style="margin: 10px">
+                  -
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="b_img" style="display: none">
+            <img src="coffee-cup.png" alt="" />
+            <div>
+              <span class="b_name">커피</span>
+              <span class="price">6000</span><span>원</span>
+              <div class="pm_box">
+                <div class="plus" onclick="plus_s(6)" style="margin: 10px">
+                  +
+                </div>
+                <div class="lab">0</div>
+                <div class="minus" onclick="minus_s(6)" style="margin: 10px">
+                  -
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="b_img" style="display: none">
+            <img src="waffle.png" alt="" />
+            <div>
+              <span class="b_name">와플</span>
+              <span class="price">6000</span><span>원</span>
+              <div class="pm_box">
+                <div class="plus" onclick="plus_s(7)" style="margin: 10px">
+                  +
+                </div>
+                <div class="lab">0</div>
+                <div class="minus" onclick="minus_s(7)" style="margin: 10px">
+                  -
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="b_img" style="display: none">
+            <img src="pie.png" alt="" />
+            <div>
+              <span class="b_name">파이</span>
+              <span class="price">6000</span><span>원</span>
+              <div class="pm_box">
+                <div class="plus" onclick="plus_s(8)" style="margin: 10px">
+                  +
+                </div>
+                <div class="lab">0</div>
+                <div class="minus" onclick="minus_s(8)" style="margin: 10px">
+                  -
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="b_img" style="display: none">
+            <img src="burger.png" alt="" />
+            <div>
+              <span class="b_name">세트 1</span>
+              <span class="price">6000</span><span>원</span>
+              <div class="pm_box">
+                <div class="plus" onclick="plus_s(9)" style="margin: 10px">
+                  +
+                </div>
+                <div class="lab">0</div>
+                <div class="minus" onclick="minus_s(9)" style="margin: 10px">
+                  -
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="footer">
+          <div id="g_f">이전으로</div>
+          <div onclick="n_fin()">결제하기</div>
+        </div>
+      </div>
+    </div>
+    <div id="wrap2">
+      <div id="header-2">
+        <div>함께즐기면 더욱 좋습니다</div>
+        <div>선택안함</div>
+      </div>
+      <div id="main-2">
+        <div class="s_page">
+          <img src="sauce.png" /><input type="checkbox" name="" id="" />
+        </div>
+        <div class="s_page">
+          <img src="ice-tea.png" /><input type="checkbox" name="" id="" />
+        </div>
+        <div class="s_page">
+          <img src="coffee-cup.png" /><input type="checkbox" name="" id="" />
+        </div>
+        <div class="s_page">
+          <img src="waffle.png" /><input type="checkbox" name="" id="" />
+        </div>
+        <div class="s_page">
+          <img src="pie.png" /><input type="checkbox" name="" id="" />
+        </div>
+      </div>
+      <div id="footer-2">
+        <div>이전으로</div>
+        <div onclick="chb_add()">다음</div>
+      </div>
+    </div>
+  </body>
+</html>

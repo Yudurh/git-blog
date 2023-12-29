@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>배열의 중급 문법</title>
+    <!-- JS는 배열에 리스트기능(추가,삭제)이 추가됨 -->
+    <script>
+      // JS에서 배열을 선언하는 방법
+      let array0 = []; //비어있는 일차배열
+      let array1 = [10, 20, 30]; //길이가 3인 배열
+      let array2 = Array(); //비어있는 일차 배열
+      let array3 = Array(10); //길이가 10인 배열
+      let array4 = Array(10, 20, 30); //길이가 3인 배열
+
+      //데이타를 추가
+      array4.push(40);
+      console.log(array4);
+      array4[4] = 50;
+      console.log(array4);
+      array4.unshift(-10); //맨처음 추가
+      console.log(array4);
+
+      // 중간에 지우고 추가
+      //        인덱스, 지우는 갯수, 넣는 값
+      array4.splice(2, 2, 100);
+      console.log(array4);
+
+      delete array4[3]; //지우고, empty로 남김
+      console.log(array4);
+
+      let deletedValue = array4.splice(2, 1);
+      console.log(array4);
+
+      // 맨마지막 지우기
+      array4.pop();
+      console.log(array4);
+
+      // 맨첫자리 지우기
+      array4.shift();
+      console.log(array4);
+
+      // 배열 결합하기
+      let arrayA = [10, 20, 30];
+      let arrayB = [40, 50, 60];
+      let arrayC = arrayA.concat(arrayB);
+      console.log(arrayC);
+
+      let arrayD = [20, 10, 30, 40, 50];
+      let sortedArray = arrayD.sort();
+      console.log(sortedArray);
+      console.log(arrayD); //자신도 정렬됨
+      // 역정렬 - 내림차순
+      arrayD.reverse(arrayD);
+      console.log(arrayD);
+
+      // 정렬 알고리즘 커스터 마이징
+
+      arrayD.sort(function (num1, num2) {
+        return num2 - num1; //양수가 되어야 원소가 이동함
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

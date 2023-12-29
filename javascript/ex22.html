@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>연습문제</title>
+    <script>
+      // 2차배열을 활용한 문제
+      // 간단한 학생부 DB를 배열로 만들어보자.
+      //      학생번호  이름    영어점수  나이
+      // 1행 :  1       홍길동    70       20
+      // 2행 :  2       변사또    60       30
+      // 3행 :  3       사임당    50       40
+      // 4행 :  4       김진사    90       50
+      // 4명까지 입력받고(prompt함수) : 1,홍길동,70,20 (split함수)
+      // 학생번호 순으로 출력하고,
+      // 이름 가나다순으로 출력하고,
+      // 영어 점수 순으로 출력하고,
+      // 나이순(오름차순)으로 출력하시오.
+      // 도움말 : sort함수를 이용해도 됩니다.
+      document.write("<table border=1px>");
+
+      let a = Number(prompt("학생 수"));
+      let b = [];
+      for (let i = 0; i < a; i++) {
+        b[i] = [
+          prompt("학생번호"),
+          prompt("이름"),
+          prompt("영어점수"),
+          prompt("나이"),
+        ];
+      }
+
+      for (let i = 0; i < a / 4; i++) {
+        document.write("<th>" + "학생번호" + "</th>");
+        document.write("<th>" + "이름" + "</th>");
+        document.write("<th>" + "영어점수" + "</th>");
+        document.write("<th>" + "나이" + "</th>");
+      }
+      for (let i = 0; i < a; i++) {
+        document.write("<tr>");
+        for (let j = 0; j < 4; j++) {
+          if (j == 0) {
+            document.write("<td>" + b[i][j]);
+          } else if (j == 1) {
+            document.write("<td>" + b[i][j]);
+          } else if (j == 2) {
+            document.write("<td>" + b[i][j]);
+          } else if (j == 3) {
+            document.write("<td>" + b[i][j]);
+          }
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

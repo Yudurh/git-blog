@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>영화진흥위원회 Open API 활용</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- https://www.kobis.or.kr/kobisopenapi/homepg/main/main.do -->
+    <!-- 회원가입 로그인 -->
+    <!-- API KEY 발급받기 :4f6b420d7181a690a7194ae2f206812f	 -->
+    <!-- 주간 영화 랭킹 정보조회 -->
+    <script>
+      //https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=4f6b420d7181a690a7194ae2f206812f&targetDt=20230820
+      // 연습문제
+      // 1. fetch 함수를 이용하여, json정보를 출력하시오
+      // fetch(
+      //   "https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=4f6b420d7181a690a7194ae2f206812f&targetDt=20230820"
+      // )
+      //   .then((response) => {
+      //     //response : HTTP 응답 객체
+      //     console.log(response);
+      //     return response.json();
+      //     document.write(response);
+      //   })
+      //   .then((json) => {
+      //     //json 순수데이터
+      //     console.log(json);
+      //     document.write(JSON.stringify(json));
+      //     for (
+      //       let i = 0;
+      //       i < json.boxOfficeResult.weeklyBoxOfficeList.length;
+      //       i++
+      //     ) {
+      //       let a = json.boxOfficeResult.weeklyBoxOfficeList[i].rank;
+      //       console.log(a);
+      //       let b = json.boxOfficeResult.weeklyBoxOfficeList[i].movieNm;
+      //       console.log(b);
+      //       let c = json.boxOfficeResult.weeklyBoxOfficeList[i].audiCnt;
+      //       console.log(c);
+      //       let d = json.boxOfficeResult.weeklyBoxOfficeList[i].movieCd;
+      //       console.log(d);
+      //     }
+      //      .catch(()=>{console.log("통신오류")})
+
+      // 2. ajax 함수를 이용하여, 출력
+      $(function () {
+        $.ajax({
+          type: "get",
+          dataType: "json",
+          url: "https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=4f6b420d7181a690a7194ae2f206812f&targetDt=20230820",
+          mimeType: "application/json",
+          success: function (data) {
+            // console.log(data);
+            // console.log(JSON.stringify(data));
+            $.each(
+              data.boxOfficeResult.weeklyBoxOfficeList,
+              function (index, item) {
+                console.log(item.rank);
+                console.log(item.movieNm);
+                console.log(item.movieCd);
+                console.log(item.audiCnt);
+              }
+            );
+          },
+          error: function () {
+            console.log("통신오류입니다");
+          },
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

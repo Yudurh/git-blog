@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Document</title>
+    <script>
+      function openMenu() {
+        let m_pop = document.getElementById("pop_m");
+        let menu = document.getElementsByClassName("menu");
+        for (let i = 0; i < menu.length; i++) {
+          menu[i].style.display = "block";
+        }
+      }
+    </script>
+    <style>
+      #wrap {
+        display: flex;
+        flex-direction: column;
+      }
+      #pop_m {
+        background-color: #555;
+        color: white;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 17px;
+        width: 25%;
+      }
+      .menu {
+        width: 25%;
+        display: none;
+      }
+      .menu:hover {
+        background-color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <button id="pop_m" onclick="openMenu()">팝업메뉴</button>
+      <button class="menu">메뉴1</button>
+      <button class="menu">메뉴2</button>
+      <button class="menu">메뉴3</button>
+    </div>
+  </body>
+</html>

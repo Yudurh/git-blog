@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index.html</title>
+</head>
+<body>
+    <h2>index.html 입니다</h2>
+
+    <h2 th:text="${ name }"> name값 </h2>
+    <h2 th:text="${ age }"> age값 </h2>
+
+
+    로그인 여부 확인<br>
+    <h2 th:text="${ session.isLogin }"> isLogin 값 </h2>
+
+
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Document</title>
+    <script>
+      let a = prompt().split(" ");
+      let b = a.sort(function (a, b) {
+        return a - b;
+      });
+
+      let c = Array.from(new Set(b));
+
+      let d = 0;
+      for (let i = 0; i < b.length; i++) {
+        if (c[c.length - 1] == b[i]) {
+          d++;
+        } else if (c[c.length - 2] == b[i]) {
+          d++;
+        } else if (c[c.length - 3] == b[i]) {
+          d++;
+        }
+      }
+      console.log(d);
+    </script>
+  </head>
+  <body></body>
+</html>

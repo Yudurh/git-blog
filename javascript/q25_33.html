@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Document</title>
+    <script>
+      function one(n) {
+        function two(a) {
+          let b = Math.pow(a, n);
+          return b;
+        }
+        return two;
+      }
+      let a = one(2);
+
+      console.log(a(10));
+    </script>
+  </head>
+  <body></body>
+</html>

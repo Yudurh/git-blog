@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>화면설계1</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        overflow: hidden;
+      }
+      #header {
+        border-bottom: 1px solid black;
+
+        padding-bottom: 50px;
+      }
+      #main {
+        margin: 50px;
+        width: 500px;
+        text-align: center;
+      }
+      #main > label {
+        text-align: right;
+        width: 100px;
+      }
+      #main :hover {
+        font-size: 120%;
+        background-color: aliceblue;
+        color: red;
+      }
+      #footer {
+        text-align: center;
+      }
+      #footer span {
+        border: 10px solid white;
+        background-color: green;
+      }
+      #footer a {
+        text-align: center;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="header">
+        <h1>CONTACT US</h1>
+      </div>
+      <div id="main">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          name="이름을 입력하시오"
+          id="name"
+          placeholder="이름을 입력"
+        />
+        <br />
+        <br />
+        <label for="">Email</label>
+        <input type="email" name="" id="" placeholder="이메일을 입력" /><br />
+        <br />
+        <label for="">Comment</label>
+        <input type="text" placeholder="메시지를 남겨주세요" />
+        <br />
+      </div>
+      <div id="footer">
+        <span><a href="#">submit</a></span>
+      </div>
+    </div>
+  </body>
+</html>

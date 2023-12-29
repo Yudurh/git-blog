@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- xmlns : xml name space XML의 태그와 속성을 정의하는곳-->
+<!-- th : 타임리프 관련 태그나 속성은 th로 시작함 -->
+<html lang="ko" xmlns:th ="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index1.html</title>
+</head>
+<body>
+    <h2>웰컴 투 타임리프</h2>
+
+
+    th:text : innerText로 출력 <br>
+    <p th:text="${ name_text }">innerText</p>
+
+
+
+    th:utext : innerHTML로 출력 <br>
+    <p th:utext="${ name_html }">innerHTML</p>
+
+
+    문자열연결 <br>
+    <p th:text="'Welcome, ' + ${ name_text }">연결된 문자열</p>
+
+
+    문자열보간(치환) <br>
+    <p th:text="|Welcome, + ${ name_text }|">연결된 문자열</p>
+
+
+    Input태그 value에 값 넣기 <br>
+    <input type="text" th:value="${ server_value }" value=""> <br>
+
+</body>
+</html>

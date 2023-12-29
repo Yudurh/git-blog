@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        overflow: hidden;
+      }
+      body {
+        text-align: left;
+      }
+      #header {
+        border-bottom: 1px solid black;
+        padding-bottom: 15px;
+      }
+      table {
+        margin-top: 10px;
+        border-collapse: collapse;
+      }
+      thead {
+        color: yellow;
+        background-color: darkgray;
+      }
+      tfoot {
+        color: yellow;
+        background-color: darkgray;
+      }
+      tbody tr:nth-child(even) {
+        background-color: aliceblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header"><h2>1학기 성적</h2></div>
+    <table border="0" width="500" height="300">
+      <thead>
+        <tr align="left">
+          <th>이름</th>
+          <th>HTML</th>
+          <th>CSS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr align="left">
+          <td>황기태</td>
+          <td>80</td>
+          <td>70</td>
+        </tr>
+        <tr align="left">
+          <td>이재문</td>
+          <td>95</td>
+          <td>99</td>
+        </tr>
+        <tr align="left">
+          <td>이병은</td>
+          <td>85</td>
+          <td>90</td>
+        </tr>
+        <tr align="left">
+          <td>김남윤</td>
+          <td>50</td>
+          <td>40</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr align="left">
+          <td>합</td>
+          <td>310</td>
+          <td>249</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

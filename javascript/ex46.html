@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>라디오버튼 체크 확인</title>
+    <script>
+      //연습문제
+      //버튼을 클릭하면, h3태그에 선택된 라디오버튼의 텍스트와 value를 출력하시오.
+      function value_check() {
+        let inputs = document.getElementsByName("fruit");
+        let names = document.getElementsByTagName("span");
+        let name = document.getElementsByTagName("h3");
+
+        for (let i = 0; i < inputs.length; i++) {
+          if (inputs[i].checked == true) {
+            console.log(inputs[i].value);
+            name[1].innerHTML = "선택된 과일 value: " + inputs[i].value;
+            name[0].innerHTML = "선택된 과일 이름 : " + names[i].innerHTML;
+          }
+        }
+      }
+      //onchange 이벤트 함수
+      //버튼을 클릭하면 선택된 h4태그에 과일 이름을 출력하시오.
+      function handleChange() {
+        let fu = document.getElementsByName("myRadios");
+        let H4 = document.getElementsByTagName("h4");
+        if (fu[0].checked == true) {
+          H4[0].innerHTML = "선택된 과일 이름: " + fu[0].value;
+        } else if (fu[1].checked == true) {
+          H4[0].innerHTML = "선택된 과일 이름: " + fu[1].value;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h3>선택된 과일 이름 :</h3>
+    <h3>선택된 과일 value :</h3>
+    <input type="radio" name="fruit" value="apple" checked />
+    <span id="apple">사과</span>
+    <input type="radio" name="fruit" value="strawberry" />
+    <span id="strawberry">딸기</span>
+    <input type="radio" name="fruit" value="lemon" />
+    <span id="lemon">레몬</span>
+    <input type="radio" name="fruit" value="mango" />
+    <span id="mango">망고</span>
+    <input type="radio" name="fruit" value="melon" />
+    <span id="melon">메론</span>
+    <button onclick="value_check()">체크된 객체 value 가져오기</button>
+
+    <br /><br />
+    <h4>선택된 과일 이름 :</h4>
+    <label for="radio1">포도</label>
+    <input
+      id="radio1"
+      type="radio"
+      name="myRadios"
+      onchange="handleChange(this);"
+      value="포도"
+    />
+    <label for="radio2">패션후르츠</label>
+    <input
+      id="radio2"
+      type="radio"
+      name="myRadios"
+      onchange="handleChange(this);"
+      value="패션후르츠"
+    />
+  </body>
+</html>

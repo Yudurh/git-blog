@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>상속관계에서 n번째 선택자 - nth-of-type선택자</title>
+    <style>
+      div p:nth-of-type(1) {
+        color: blue;
+      }
+      div p:first-of-type {
+        background-color: aqua;
+      }
+      div p:last-of-type {
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div>
+        div아이템1
+        <p>p 아이템1</p>
+        <p>p 아이템2</p>
+        <p>p 아이템3</p>
+      </div>
+    </div>
+  </body>
+</html>

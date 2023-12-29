@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th ="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function(){
+        let num1 = document.getElementById("number1");
+        let num2 = document.getElementById("number2");
+        let mathBox = document.getElementsByClassName("math_box");
+        let ansBox = document.getElementById("ans_box");
+        mathBox[0].onclick = () => {
+          ansBox.innerHTML = Number(num1.value) + Number(num2.value);
+        };
+        mathBox[1].onclick = () => {
+          ansBox.innerHTML = Number(num1.value) - Number(num2.value);
+        };
+        mathBox[2].onclick = () => {
+          ansBox.innerHTML = Number(num1.value) * Number(num2.value);
+        };
+        mathBox[3].onclick = () => {
+          ansBox.innerHTML = Number(num1.value) / Number(num2.value);
+        };
+
+
+
+
+
+        }
+    </script>
+</head>
+<body>
+<form onsubmit="return false">
+<label>숫자1</label> <input type="text" id="number1" value=""> <br>
+    <label>숫자2</label> <input type="text" id="number2" value=""> <br>
+<div id="ans_box" ></div> <br>
+    <input type="submit" value="덧셈" class="math_box">
+    <input type="submit" value="뺄셈" class="math_box">
+    <input type="submit" value="곱셈" class="math_box">
+    <input type="submit" value="나눗셈" class="math_box">
+</form>
+</body>
+</html>
